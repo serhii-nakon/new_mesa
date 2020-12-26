@@ -1,0 +1,72 @@
+Package: libvulkan-dev
+Source: vulkan-loader
+Version: 1.2.154.1-1
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 8989
+Depends: libvulkan1 (= 1.2.154.1-1)
+Breaks: vulkan-headers, vulkan-sdk-headers
+Replaces: vulkan-headers, vulkan-sdk-headers
+Filename: ./libvulkan-dev_1.2.154.1-1_amd64.deb
+Size: 564976
+MD5sum: 90cc2f95e06ddd9356cf40aace8a3d4e
+SHA1: d8f042a4726a87c019d8afddb8bf3c2e4a336ec8
+SHA256: 7575655e33892cebcd0b301f2cecae180ba1279f37f03c56c473b8d78e7d633e
+Section: libdevel
+Priority: optional
+Multi-Arch: same
+Homepage: https://github.com/KhronosGroup/Vulkan-Loader
+Description: Vulkan loader library -- development files
+ The Loader implements the main VK library. It handles layer management and
+ driver management. The loader fully supports multi-gpu operation. As part of
+ this, it dispatches API calls to the correct driver, and to the correct
+ layers, based on the GPU object selected by the application.
+ .
+ This package includes files needed for development.
+
+Package: libvulkan1
+Source: vulkan-loader
+Version: 1.2.154.1-1
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 436
+Depends: libc6 (>= 2.17)
+Recommends: mesa-vulkan-drivers | vulkan-icd
+Breaks: libvulkan-dev (<< 1.1.70+dfsg1-2), vulkan-loader
+Replaces: libvulkan-dev (<< 1.1.70+dfsg1-2), vulkan-loader
+Filename: ./libvulkan1_1.2.154.1-1_amd64.deb
+Size: 105200
+MD5sum: 9ba3c833bf821901cac09cb985401e68
+SHA1: 6f160ce5ed4ca1dc691e4ab81428e5c7581f3ded
+SHA256: 42fd698de07d07108114debe500355967bf6d318d06838b7fee3c56ebeac1e57
+Section: libs
+Priority: optional
+Multi-Arch: same
+Homepage: https://github.com/KhronosGroup/Vulkan-Loader
+Description: Vulkan loader library
+ The Loader implements the main VK library. It handles layer management and
+ driver management. The loader fully supports multi-gpu operation. As part of
+ this, it dispatches API calls to the correct driver, and to the correct
+ layers, based on the GPU object selected by the application.
+ .
+ This package includes the loader library.
+
+Package: libvulkan1-dbgsym
+Source: vulkan-loader
+Version: 1.2.154.1-1
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 489
+Depends: libvulkan1 (= 1.2.154.1-1)
+Filename: ./libvulkan1-dbgsym_1.2.154.1-1_amd64.deb
+Size: 418248
+MD5sum: a864ab9f721f9aa04e67a7868ffa6b13
+SHA1: 73f52f6ac45a095796b3154c43c73d5f935580aa
+SHA256: 39ebae6031bd9cd0e71998435e4fac8fa2d2940470a3ab8224b0ad809d715cdf
+Section: debug
+Priority: optional
+Multi-Arch: same
+Description: debug symbols for libvulkan1
+Build-Ids: f54eb8f184ef8a80a5028497b83846fb721c20da
+

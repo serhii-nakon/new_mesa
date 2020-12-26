@@ -1,0 +1,89 @@
+Package: libclc-amdgcn
+Source: libclc
+Version: 0.2.0+git20190827-8
+Architecture: all
+Maintainer: Debian OpenCL team <pkg-opencl-devel@lists.alioth.debian.org>
+Installed-Size: 23775
+Depends: libclc-dev (= 0.2.0+git20190827-8), libclang-common-11-dev
+Filename: ./libclc-amdgcn_0.2.0+git20190827-8_all.deb
+Size: 2267864
+MD5sum: b824ac5f7d700e8d0faa69c048cd2282
+SHA1: 636669dfa2355cbb35e886e708e4c1fa339654a1
+SHA256: 50b555e6bb522310a43cee50ff528a3d1546bdff7a7e6f970a523c6cfc94cbbf
+Section: libs
+Priority: optional
+Multi-Arch: foreign
+Homepage: https://libclc.llvm.org
+Description: OpenCL C language implementation - amdgcn support
+ libclc is an open implementation of the OpenCL C programming language,
+ as specified by the OpenCL 1.1 Specification.
+ .
+ This package contains support for the amdgcn (AMD GPU) platform.
+ Supported GPU families: Southern Islands and newer.
+
+Package: libclc-dev
+Source: libclc
+Version: 0.2.0+git20190827-8
+Architecture: all
+Maintainer: Debian OpenCL team <pkg-opencl-devel@lists.alioth.debian.org>
+Installed-Size: 407
+Filename: ./libclc-dev_0.2.0+git20190827-8_all.deb
+Size: 26376
+MD5sum: 59a48fc2bd2f5074bc1a03d77de0f415
+SHA1: e96e879941b665227e540348d9155b96956276c8
+SHA256: f065d3491df9bd9cff9122a2e4e2de2edcf760bc686fbeadf5b488b167e5c7cb
+Section: libdevel
+Priority: optional
+Multi-Arch: foreign
+Homepage: https://libclc.llvm.org
+Description: OpenCL C language implementation - development files
+ libclc is an open implementation of the OpenCL C programming language,
+ as specified by the OpenCL 1.1 Specification.
+ .
+ This package contains development header files.
+
+Package: libclc-ptx
+Source: libclc
+Version: 0.2.0+git20190827-8
+Architecture: all
+Maintainer: Debian OpenCL team <pkg-opencl-devel@lists.alioth.debian.org>
+Installed-Size: 16065
+Depends: libclc-dev (= 0.2.0+git20190827-8), libclang-common-11-dev
+Filename: ./libclc-ptx_0.2.0+git20190827-8_all.deb
+Size: 2417164
+MD5sum: ffbb8df73119dce890233a4df8ea5e8c
+SHA1: 377e2f5e6936cd0726a5968f335590fa3aab9a72
+SHA256: 1696cccad6b49a429d81ba376a9b5ed2742df05e26e02fda548b692ef4ec6769
+Section: libs
+Priority: optional
+Multi-Arch: foreign
+Homepage: https://libclc.llvm.org
+Description: OpenCL C language implementation - ptx support
+ libclc is an open implementation of the OpenCL C programming language,
+ as specified by the OpenCL 1.1 Specification.
+ .
+ This package contains support for the PTX platform.
+
+Package: libclc-r600
+Source: libclc
+Version: 0.2.0+git20190827-8
+Architecture: all
+Maintainer: Debian OpenCL team <pkg-opencl-devel@lists.alioth.debian.org>
+Installed-Size: 17070
+Depends: libclc-dev (= 0.2.0+git20190827-8), libclang-common-11-dev
+Filename: ./libclc-r600_0.2.0+git20190827-8_all.deb
+Size: 1667936
+MD5sum: 73a886e74e02f8330bb4572757155652
+SHA1: 81272df548fb93a13b8b38930c2b406aeac78ad8
+SHA256: 5fd095a12881697fe663abbd42b1e609009a885cfc488e7dbcd0a6764792338c
+Section: libs
+Priority: optional
+Multi-Arch: foreign
+Homepage: https://libclc.llvm.org
+Description: OpenCL C language implementation - r600 support
+ libclc is an open implementation of the OpenCL C programming language,
+ as specified by the OpenCL 1.1 Specification.
+ .
+ This package contains support for the r600 (AMD GPU) platform.
+ Supported GPU families: Evergreen and Northern Islands.
+

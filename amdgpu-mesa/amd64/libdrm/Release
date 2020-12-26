@@ -1,0 +1,303 @@
+Package: libdrm-amdgpu1
+Source: libdrm
+Version: 2.4.103-2
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 83
+Depends: libc6 (>= 2.28), libdrm2 (>= 2.4.101)
+Filename: ./libdrm-amdgpu1_2.4.103-2_amd64.deb
+Size: 28440
+MD5sum: 8c1e7304eec82a2c275d8ff95c9ff94c
+SHA1: d72c9ba0e356822002ffcc05d5962c36ecdfdeed
+SHA256: 86a49e28ada913082a0be85d6fb7d42dc6e64a173a3b8c700686afc8ef80842b
+Section: libs
+Priority: optional
+Multi-Arch: same
+Homepage: https://cgit.freedesktop.org/mesa/drm/
+Description: Userspace interface to amdgpu-specific kernel DRM services -- runtime
+ This library implements the userspace interface to the kernel DRM
+ services.  DRM stands for "Direct Rendering Manager", which is the
+ kernelspace portion of the "Direct Rendering Infrastructure" (DRI).
+ The DRI is currently used on Linux to provide hardware-accelerated
+ OpenGL drivers.
+
+Package: libdrm-amdgpu1-dbgsym
+Source: libdrm
+Version: 2.4.103-2
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 68
+Depends: libdrm-amdgpu1 (= 2.4.103-2)
+Filename: ./libdrm-amdgpu1-dbgsym_2.4.103-2_amd64.deb
+Size: 50568
+MD5sum: 349fa6a6826d4e0fdb5e469c025eee51
+SHA1: 022442d981bc0406d9cb2947c5194f7ca2215247
+SHA256: 47763198844adf216e9f3d07f848f102638dc356491ec1ddddf3a4a67fd2b144
+Section: debug
+Priority: optional
+Multi-Arch: same
+Description: debug symbols for libdrm-amdgpu1
+Build-Ids: e503e7a48271e378979afe083eb81d3f885f6bfe
+
+Package: libdrm-common
+Source: libdrm
+Version: 2.4.103-2
+Architecture: all
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 43
+Filename: ./libdrm-common_2.4.103-2_all.deb
+Size: 14772
+MD5sum: e7673b752797f444d31243c5634b3248
+SHA1: 7e01d7b884533ff359e7ec584570390c434c095d
+SHA256: 0eb52f90bb0689b9448ef4f0334cb09bd2528fbca01322e0ac1e2b04753393c2
+Section: libs
+Priority: optional
+Multi-Arch: foreign
+Homepage: https://cgit.freedesktop.org/mesa/drm/
+Description: Userspace interface to kernel DRM services -- common files
+ This library implements the userspace interface to the kernel DRM
+ services.  DRM stands for "Direct Rendering Manager", which is the
+ kernelspace portion of the "Direct Rendering Infrastructure" (DRI).
+ The DRI is currently used on Linux to provide hardware-accelerated
+ OpenGL drivers.
+ .
+ This package provides common files for libdrm.
+
+Package: libdrm-dev
+Source: libdrm
+Version: 2.4.103-2
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 644
+Depends: libdrm2 (= 2.4.103-2), libdrm-intel1 (= 2.4.103-2), libdrm-radeon1 (= 2.4.103-2), libdrm-nouveau2 (= 2.4.103-2), libdrm-amdgpu1 (= 2.4.103-2)
+Filename: ./libdrm-dev_2.4.103-2_amd64.deb
+Size: 136112
+MD5sum: c397cdf4eef512ae1779f477504d08d4
+SHA1: d5cbb51a2e221b90c499613b5777b522247fc132
+SHA256: 9c4fa2d0876886a81022ab6757a4b368fa62f2d74441c191c6e845bf5a1baafc
+Section: libdevel
+Priority: optional
+Multi-Arch: same
+Homepage: https://cgit.freedesktop.org/mesa/drm/
+Description: Userspace interface to kernel DRM services -- development files
+ This library implements the userspace interface to the kernel DRM
+ services.  DRM stands for "Direct Rendering Manager", which is the
+ kernelspace portion of the "Direct Rendering Infrastructure" (DRI).
+ The DRI is currently used on Linux to provide hardware-accelerated
+ OpenGL drivers.
+ .
+ This package provides the development environment for libdrm.
+
+Package: libdrm-intel1
+Source: libdrm
+Version: 2.4.103-2
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 185
+Depends: libc6 (>= 2.17), libdrm2 (>= 2.4.38), libpciaccess0
+Filename: ./libdrm-intel1_2.4.103-2_amd64.deb
+Size: 70448
+MD5sum: 2bed246c47dd369c1d0505ce452594ff
+SHA1: 0f3a1cfb999e8b5fe1985ea2dd05d57135b593f2
+SHA256: c5bea6771652df904f74bc0704fb7b37a8f06dbdfe22c03d3de0a48006c2462b
+Section: libs
+Priority: optional
+Multi-Arch: same
+Homepage: https://cgit.freedesktop.org/mesa/drm/
+Description: Userspace interface to intel-specific kernel DRM services -- runtime
+ This library implements the userspace interface to the kernel DRM
+ services.  DRM stands for "Direct Rendering Manager", which is the
+ kernelspace portion of the "Direct Rendering Infrastructure" (DRI).
+ The DRI is currently used on Linux to provide hardware-accelerated
+ OpenGL drivers.
+
+Package: libdrm-intel1-dbgsym
+Source: libdrm
+Version: 2.4.103-2
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 149
+Depends: libdrm-intel1 (= 2.4.103-2)
+Filename: ./libdrm-intel1-dbgsym_2.4.103-2_amd64.deb
+Size: 127224
+MD5sum: f578a12bc18c48f5187b00bb1da49ebf
+SHA1: 26e939510ca55c6bd2245109dcb8526d5368dc5d
+SHA256: c7a7ca61c3a5765f2df8ea285370539e21848be093755854d510d9b29eb25c84
+Section: debug
+Priority: optional
+Multi-Arch: same
+Description: debug symbols for libdrm-intel1
+Build-Ids: 6bf239335f48232758c8768e0d432ec947976879
+
+Package: libdrm-nouveau2
+Source: libdrm
+Version: 2.4.103-2
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 81
+Depends: libc6 (>= 2.14), libdrm2 (>= 2.4.38)
+Filename: ./libdrm-nouveau2_2.4.103-2_amd64.deb
+Size: 26920
+MD5sum: 79e24697d61a0ed08b07b0a8e49b8f24
+SHA1: 6e59ff987574350e50826ea9cc877215801249d8
+SHA256: 750d61c77af56c8389b2a1305f200e381d9bfde42b9a661ed087589901998ccd
+Section: libs
+Priority: optional
+Multi-Arch: same
+Homepage: https://cgit.freedesktop.org/mesa/drm/
+Description: Userspace interface to nouveau-specific kernel DRM services -- runtime
+ This library implements the userspace interface to the kernel DRM
+ services.  DRM stands for "Direct Rendering Manager", which is the
+ kernelspace portion of the "Direct Rendering Infrastructure" (DRI).
+ The DRI is currently used on Linux to provide hardware-accelerated
+ OpenGL drivers.
+
+Package: libdrm-nouveau2-dbgsym
+Source: libdrm
+Version: 2.4.103-2
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 55
+Depends: libdrm-nouveau2 (= 2.4.103-2)
+Filename: ./libdrm-nouveau2-dbgsym_2.4.103-2_amd64.deb
+Size: 40128
+MD5sum: 282720ece232f5ccfca8ad7c8b9bafa4
+SHA1: d3133f58e7c48ae44030d575a3794695dd36aaff
+SHA256: d15be39dcffcefe997593aaa5c2450f52a3036ffc3270493bc6f54c7b3060cd9
+Section: debug
+Priority: optional
+Multi-Arch: same
+Description: debug symbols for libdrm-nouveau2
+Build-Ids: d081afaa81becb876938e8f4c01f624495fab97b
+
+Package: libdrm-radeon1
+Source: libdrm
+Version: 2.4.103-2
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 90
+Depends: libc6 (>= 2.4), libdrm2 (>= 2.4.38)
+Filename: ./libdrm-radeon1_2.4.103-2_amd64.deb
+Size: 31668
+MD5sum: 967607b05ccdca426369bd38d93577d3
+SHA1: 4364dc79fd5d9b97784d2f536ba0934d21a69486
+SHA256: 329e33dc8eaa5ebf9e86a36f96c12e0bc85b42f1978ed2149551ac9edd1cdc6f
+Section: libs
+Priority: optional
+Multi-Arch: same
+Homepage: https://cgit.freedesktop.org/mesa/drm/
+Description: Userspace interface to radeon-specific kernel DRM services -- runtime
+ This library implements the userspace interface to the kernel DRM
+ services.  DRM stands for "Direct Rendering Manager", which is the
+ kernelspace portion of the "Direct Rendering Infrastructure" (DRI).
+ The DRI is currently used on Linux to provide hardware-accelerated
+ OpenGL drivers.
+
+Package: libdrm-radeon1-dbgsym
+Source: libdrm
+Version: 2.4.103-2
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 65
+Depends: libdrm-radeon1 (= 2.4.103-2)
+Filename: ./libdrm-radeon1-dbgsym_2.4.103-2_amd64.deb
+Size: 48744
+MD5sum: f433259ddd582dfd25aa3f288ecc602e
+SHA1: efc0c988db3f495131eeee4cc9d5f4515b64b8dd
+SHA256: 399b5e10e4aa79fa7f356a7e3dbbfe057fb1bdc1c99af6cf96fad134eb8dd801
+Section: debug
+Priority: optional
+Multi-Arch: same
+Description: debug symbols for libdrm-radeon1
+Build-Ids: 2cf9e9bd6a341c90979935ec63c21421400d5f4c
+
+Package: libdrm-tests
+Source: libdrm
+Version: 2.4.103-2
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 242
+Depends: libdrm2 (= 2.4.103-2), libc6 (>= 2.15)
+Filename: ./libdrm-tests_2.4.103-2_amd64.deb
+Size: 57988
+MD5sum: 014cb09c5055e8eb9c7f0dd583c4e319
+SHA1: 1c59a5f74386578a45c3a394db55070a452450ef
+SHA256: 6cc54350ef6b32a4c46a04a198b4176d1d69357c82fcbcd07c820157dad5d81f
+Section: libs
+Priority: optional
+Homepage: https://cgit.freedesktop.org/mesa/drm/
+Description: Testing tools from the libdrm project
+ This library implements the userspace interface to the kernel DRM
+ services.  DRM stands for "Direct Rendering Manager", which is the
+ kernelspace portion of the "Direct Rendering Infrastructure" (DRI).
+ The DRI is currently used on Linux to provide hardware-accelerated
+ OpenGL drivers.
+ .
+ This package contains a variety of tools for testing from the libdrm project.
+
+Package: libdrm-tests-dbgsym
+Source: libdrm
+Version: 2.4.103-2
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 233
+Depends: libdrm-tests (= 2.4.103-2)
+Filename: ./libdrm-tests-dbgsym_2.4.103-2_amd64.deb
+Size: 166248
+MD5sum: 7d6ce3874f3d0f43e147a228aac97174
+SHA1: 4dd4c3a65972be364dbedbde2eb52f0299055211
+SHA256: 1d4a1272f5a10d3b6923b18f8baad5ced5177554b552816de0c151a44f5817db
+Section: debug
+Priority: optional
+Description: debug symbols for libdrm-tests
+Build-Ids: 1d81ae1c56dacc252bb74ef3e55af2d6e1a9e13a 1fe233d194448465e07b77ce74aa221c36f1f74a 2dd4e52b02a19c82be2c200d87db92a37fbbc9fb 2fc284700b9fa2c5dba1fe1e0d5d8bf847ef5b42 4d3977eb14a61ff8516e290cdc006cc906e2c82d 542619af490575caf5468802849ad168a6a315c3 cb277bf28008c1668ab1dc1eaba0d327ce2ed74b
+
+Package: libdrm2
+Source: libdrm
+Version: 2.4.103-2
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 119
+Depends: libdrm-common (>= 2.4.103-2), libc6 (>= 2.17)
+Filename: ./libdrm2_2.4.103-2_amd64.deb
+Size: 41556
+MD5sum: e562fc6374a9c19cd8d40f150c42f30d
+SHA1: 35efd56495c37bf9d354bd075b22af3d75c8b31b
+SHA256: bae217d4c4e1c7e80842bc212855fa267c25e9800a410367c4070c40c61c5dd4
+Section: libs
+Priority: optional
+Multi-Arch: same
+Homepage: https://cgit.freedesktop.org/mesa/drm/
+Description: Userspace interface to kernel DRM services -- runtime
+ This library implements the userspace interface to the kernel DRM
+ services.  DRM stands for "Direct Rendering Manager", which is the
+ kernelspace portion of the "Direct Rendering Infrastructure" (DRI).
+ The DRI is currently used on Linux to provide hardware-accelerated
+ OpenGL drivers.
+ .
+ This package provides the runtime environment for libdrm.
+
+Package: libdrm2-dbgsym
+Source: libdrm
+Version: 2.4.103-2
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 114
+Depends: libdrm2 (= 2.4.103-2)
+Filename: ./libdrm2-dbgsym_2.4.103-2_amd64.deb
+Size: 94744
+MD5sum: 54e3f216e0aabe832c3570ac3b3949d6
+SHA1: 8619e5a12cc3bd408a6dbdcf1582879be333f320
+SHA256: cc5720cf4b8ea836a29993cccad103c447ef544d4dbfeecbd79d9ba565572479
+Section: debug
+Priority: optional
+Multi-Arch: same
+Description: debug symbols for libdrm2
+Build-Ids: af1e85d90b6eb8062ba9e55f559a64193d269e65
+

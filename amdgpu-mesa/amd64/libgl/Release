@@ -1,0 +1,457 @@
+Package: libegl-dev
+Source: libglvnd
+Version: 1.3.2-1
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 117
+Depends: libegl1 (= 1.3.2-1), libgl-dev, libx11-dev
+Breaks: libegl1-mesa-dev (<< 19.3.0~rc6-1), libglvnd-dev (<< 1.3.0-1)
+Replaces: libegl1-mesa-dev (<< 19.3.0~rc6-1), libglvnd-dev (<< 1.3.0-1)
+Filename: ./libegl-dev_1.3.2-1_amd64.deb
+Size: 19560
+MD5sum: 7575733740307b87c00fc5666794cb78
+SHA1: 3469a4f2c28973ecd785393724d0ea5a90fb426e
+SHA256: 2847662b23487d5b1e467bca8cc8753baa880f794744a9b492c978bd5514b286
+Section: libs
+Priority: optional
+Multi-Arch: same
+Homepage: https://gitlab.freedesktop.org/glvnd/libglvnd
+Description: Vendor neutral GL dispatch library -- EGL development files
+ This is an implementation of the vendor-neutral dispatch layer for
+ arbitrating OpenGL API calls between multiple vendors on a per-screen basis.
+ .
+ This package provides the development environment for compiling programs
+ against the EGL library.
+
+Package: libegl1
+Source: libglvnd
+Version: 1.3.2-1
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 108
+Depends: libc6 (>= 2.14), libglvnd0 (= 1.3.2-1), libegl-mesa0
+Filename: ./libegl1_1.3.2-1_amd64.deb
+Size: 34132
+MD5sum: b13825f07c0dc0b048452812eb73a7af
+SHA1: 6c1ac0e965a500c1c606afcdfc5084f0b8fa1545
+SHA256: e8679392f052d51808afef02512b639acaafe18ab73db9222445eb36578dd407
+Section: libs
+Priority: optional
+Multi-Arch: same
+Homepage: https://gitlab.freedesktop.org/glvnd/libglvnd
+Description: Vendor neutral GL dispatch library -- EGL support
+ This is an implementation of the vendor-neutral dispatch layer for
+ arbitrating OpenGL API calls between multiple vendors on a per-screen basis.
+ .
+ This package contains support for EGL.
+
+Package: libegl1-dbgsym
+Source: libglvnd
+Version: 1.3.2-1
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 119
+Depends: libegl1 (= 1.3.2-1)
+Filename: ./libegl1-dbgsym_1.3.2-1_amd64.deb
+Size: 95352
+MD5sum: 300fec84da7fe2da25545d50be3af766
+SHA1: 1d4995122c91ab2ab1f5198160b4e51cc738c021
+SHA256: 6d50c05eb4b6259e2d6340c719d0f32b8d63762d062a593d0294ded41084e186
+Section: debug
+Priority: optional
+Multi-Arch: same
+Description: debug symbols for libegl1
+Build-Ids: 5930dd3ffd80356613d5706ca568e8b756c1df13
+
+Package: libgl-dev
+Source: libglvnd
+Version: 1.3.2-1
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 1356
+Depends: libgl1 (= 1.3.2-1), libglx-dev
+Breaks: libgl1-mesa-dev (<< 19.3.0~rc6-1), libglvnd-dev (<< 1.3.0-1), mesa-common-dev (<< 19.3.0~rc6-1)
+Replaces: libgl1-mesa-dev (<< 19.3.0~rc6-1), libglvnd-dev (<< 1.3.0-1), mesa-common-dev (<< 19.3.0~rc6-1)
+Filename: ./libgl-dev_1.3.2-1_amd64.deb
+Size: 100148
+MD5sum: cbffc66b6ec79de9e75fa3c3c03ecb3f
+SHA1: 0f22ec7a139473988c96a26782d9f920479d8096
+SHA256: a6487873f2706bbabf9346cdb190f47f23a1464f31cecf92c363bac37c342f2f
+Section: libs
+Priority: optional
+Multi-Arch: same
+Homepage: https://gitlab.freedesktop.org/glvnd/libglvnd
+Description: Vendor neutral GL dispatch library -- GL development files
+ This is an implementation of the vendor-neutral dispatch layer for
+ arbitrating OpenGL API calls between multiple vendors on a per-screen basis.
+ .
+ This package provides the development environment for compiling programs
+ against the GL library.
+
+Package: libgl1
+Source: libglvnd
+Version: 1.3.2-1
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 653
+Depends: libc6 (>= 2.14), libglvnd0 (= 1.3.2-1), libglx0 (= 1.3.2-1)
+Filename: ./libgl1_1.3.2-1_amd64.deb
+Size: 88624
+MD5sum: 14a97120149f47125fce211278753c59
+SHA1: a5d048aa2e257cc5600d0f823238db7f879b76f2
+SHA256: e9ed04756aa69e87a58c20d4ff40c2df6f5fb4fe9b527fbaabf1355dae259d0b
+Section: libs
+Priority: optional
+Multi-Arch: same
+Homepage: https://gitlab.freedesktop.org/glvnd/libglvnd
+Description: Vendor neutral GL dispatch library -- legacy GL support
+ This is an implementation of the vendor-neutral dispatch layer for
+ arbitrating OpenGL API calls between multiple vendors on a per-screen basis.
+ .
+ This package contains support for old libGL for compatibility reasons.
+
+Package: libgl1-dbgsym
+Source: libglvnd
+Version: 1.3.2-1
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 218
+Depends: libgl1 (= 1.3.2-1)
+Filename: ./libgl1-dbgsym_1.3.2-1_amd64.deb
+Size: 71764
+MD5sum: 7741de3a2c14c1469676e9e02eafc116
+SHA1: 32e4a26fb0682db6ee486a6e848866c8a8346fb5
+SHA256: 5556a20f53485f57cde3ce58bc415c8fb618840a9cec4660231bd204fa62610f
+Section: debug
+Priority: optional
+Multi-Arch: same
+Description: debug symbols for libgl1
+Build-Ids: 7cd6a77553d2fb6b70c18af33beedfd43bc996ce
+
+Package: libgles-dev
+Source: libglvnd
+Version: 1.3.2-1
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 701
+Depends: libegl-dev, libgl-dev, libgles1 (= 1.3.2-1), libgles2 (= 1.3.2-1)
+Breaks: libgles2-mesa-dev (<< 19.3.0~rc6-1), libglvnd-dev (<< 1.3.0-1)
+Replaces: libgles2-mesa-dev (<< 19.3.0~rc6-1), libglvnd-dev (<< 1.3.0-1)
+Filename: ./libgles-dev_1.3.2-1_amd64.deb
+Size: 50296
+MD5sum: 6d05cad59ddcb8356be2a945b3e4b115
+SHA1: 8e0b2baba221ba7cd85065a9c4784d53e7d23952
+SHA256: 969e9197d8b8a36780f9b5d86f7c3066cdfef9dd7cdc3aee59a1870415c53578
+Section: libs
+Priority: optional
+Multi-Arch: same
+Homepage: https://gitlab.freedesktop.org/glvnd/libglvnd
+Description: Vendor neutral GL dispatch library -- GLES development files
+ This is an implementation of the vendor-neutral dispatch layer for
+ arbitrating OpenGL API calls between multiple vendors on a per-screen basis.
+ .
+ This package provides the development environment for compiling programs
+ against the GLES libraries.
+
+Package: libgles1
+Source: libglvnd
+Version: 1.3.2-1
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 74
+Depends: libc6 (>= 2.14), libglvnd0 (= 1.3.2-1)
+Filename: ./libgles1_1.3.2-1_amd64.deb
+Size: 12628
+MD5sum: 977f96250b3b19c7607c0118b730a589
+SHA1: 657d6740efc85d0e54bc81ef5c663c30c363eb67
+SHA256: f1eec413ec1a57a4ed875dfb472b6cd50a3753a5a0ee703fb29d2258aa4a5e05
+Section: libs
+Priority: optional
+Multi-Arch: same
+Homepage: https://gitlab.freedesktop.org/glvnd/libglvnd
+Description: Vendor neutral GL dispatch library -- GLESv1 support
+ This is an implementation of the vendor-neutral dispatch layer for
+ arbitrating OpenGL API calls between multiple vendors on a per-screen basis.
+ .
+ This package contains support for GLESv1.
+
+Package: libgles1-dbgsym
+Source: libglvnd
+Version: 1.3.2-1
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 31
+Depends: libgles1 (= 1.3.2-1)
+Filename: ./libgles1-dbgsym_1.3.2-1_amd64.deb
+Size: 12268
+MD5sum: 5da2029308f7bcb03d831cb215235226
+SHA1: f8550cc509b663fb55d2b6338d95243dc96cd592
+SHA256: fb0749d8c7339e0d8fb5b526f731d65f634fef0a1b081d1a9a6d7292baad6d9f
+Section: debug
+Priority: optional
+Multi-Arch: same
+Description: debug symbols for libgles1
+Build-Ids: eca7dd0765d2ce6e0854580ffd8d27b4c3630212
+
+Package: libgles2
+Source: libglvnd
+Version: 1.3.2-1
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 106
+Depends: libc6 (>= 2.14), libglvnd0 (= 1.3.2-1)
+Filename: ./libgles2_1.3.2-1_amd64.deb
+Size: 17904
+MD5sum: c7dcb613c443670d3ed9274db008af68
+SHA1: a7d41212bfdb66442c9ca23cff91df73b745da34
+SHA256: 9bb7d1d7e835cd67279e6832ad53e3cfdaea0e7064d3e1dcf86baeffeb6c4df9
+Section: libs
+Priority: optional
+Multi-Arch: same
+Homepage: https://gitlab.freedesktop.org/glvnd/libglvnd
+Description: Vendor neutral GL dispatch library -- GLESv2 support
+ This is an implementation of the vendor-neutral dispatch layer for
+ arbitrating OpenGL API calls between multiple vendors on a per-screen basis.
+ .
+ This package contains support for GLESv2.
+
+Package: libgles2-dbgsym
+Source: libglvnd
+Version: 1.3.2-1
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 40
+Depends: libgles2 (= 1.3.2-1)
+Filename: ./libgles2-dbgsym_1.3.2-1_amd64.deb
+Size: 14064
+MD5sum: c759a8010eb23b62bac7e1d5326ce947
+SHA1: c35b9e4e6317cdd4687f0a162610739b21841620
+SHA256: 991667467e32247b4c0df80342f843354d9105c0feb86397eafc14a73033c6b0
+Section: debug
+Priority: optional
+Multi-Arch: same
+Description: debug symbols for libgles2
+Build-Ids: 59f68746214dc17f0338a1232f057286f0480559
+
+Package: libglvnd-core-dev
+Source: libglvnd
+Version: 1.3.2-1
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 17
+Depends: libglvnd-dev
+Filename: ./libglvnd-core-dev_1.3.2-1_amd64.deb
+Size: 5432
+MD5sum: dd0cd13fe3dabf68474b2ff8329bde0f
+SHA1: 831cfdc45e60af79f2edb1bdd7b569e44bb69ac5
+SHA256: cb4f9333ec3df2a5107dc1fbf97ff4a3ac9ea3665449e263f22ae35c8c4cb079
+Section: oldlibs
+Priority: optional
+Multi-Arch: same
+Homepage: https://gitlab.freedesktop.org/glvnd/libglvnd
+Description: transitional dummy package
+ This is a transitional dummy package, it can be safely removed.
+
+Package: libglvnd-dev
+Source: libglvnd
+Version: 1.3.2-1
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 65
+Depends: libglvnd0 (= 1.3.2-1), libegl-dev (>= 1.3.0-1), libgl-dev (>= 1.3.0-1), libgles-dev (>= 1.3.0-1), libglx-dev (>= 1.3.0-1), libopengl-dev (>= 1.3.0-1)
+Breaks: libglvnd-core-dev (<< 1.3.0-1)
+Replaces: libglvnd-core-dev (<< 1.3.0-1)
+Filename: ./libglvnd-dev_1.3.2-1_amd64.deb
+Size: 13884
+MD5sum: 228d95cd4dd118da52b7022e03e02a76
+SHA1: 459b369c3a318ed2422b55c8c51c3cd5a2b64f25
+SHA256: e330ccbe6338789fd63212b55009dcce733265799395ad55b300cd1427234e7f
+Section: libdevel
+Priority: optional
+Multi-Arch: same
+Homepage: https://gitlab.freedesktop.org/glvnd/libglvnd
+Description: Vendor neutral GL dispatch library -- development files
+ This is an implementation of the vendor-neutral dispatch layer for
+ arbitrating OpenGL API calls between multiple vendors on a per-screen basis.
+ .
+ This package contains the development files for libglvnd.
+
+Package: libglvnd0
+Source: libglvnd
+Version: 1.3.2-1
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 725
+Depends: libc6 (>= 2.14)
+Breaks: libgldispatch0-nvidia
+Replaces: libgldispatch0-nvidia
+Filename: ./libglvnd0_1.3.2-1_amd64.deb
+Size: 53872
+MD5sum: c4ef8e4569fe84e0d13cad8437bbd8cf
+SHA1: 844dc7ef09445aee9ad8c11d5b937df98bc1863d
+SHA256: 940f1da019556af98aa7bff292b6bdc288c822ff780fb6baabde2002b147093a
+Section: libs
+Priority: optional
+Multi-Arch: same
+Homepage: https://gitlab.freedesktop.org/glvnd/libglvnd
+Description: Vendor neutral GL dispatch library
+ This is an implementation of the vendor-neutral dispatch layer for
+ arbitrating OpenGL API calls between multiple vendors on a per-screen basis.
+ .
+ This package contains the GL dispatch library.
+
+Package: libglvnd0-dbgsym
+Source: libglvnd
+Version: 1.3.2-1
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 345
+Depends: libglvnd0 (= 1.3.2-1)
+Filename: ./libglvnd0-dbgsym_1.3.2-1_amd64.deb
+Size: 84748
+MD5sum: 5a1af2c79b9f13a388c0a82a0ec0a63d
+SHA1: 957aef161c336e180b1292e938c1dd17a15eb33a
+SHA256: b75194e7af9fcc5b04ca2db28c0f27e20e12339d25eb15996fee267e868ae765
+Section: debug
+Priority: optional
+Multi-Arch: same
+Description: debug symbols for libglvnd0
+Build-Ids: 27529747a703836164a3c099d0973a53f776cb78
+
+Package: libglx-dev
+Source: libglvnd
+Version: 1.3.2-1
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 89
+Depends: libglx0 (= 1.3.2-1), libx11-dev
+Breaks: libgl-dev (<< 1.3.0-6), libglvnd-dev (<< 1.3.0-1), mesa-common-dev (<< 19.3.0~rc6-1)
+Replaces: libgl-dev (<< 1.3.0-6), libglvnd-dev (<< 1.3.0-1), mesa-common-dev (<< 19.3.0~rc6-1)
+Filename: ./libglx-dev_1.3.2-1_amd64.deb
+Size: 16304
+MD5sum: ea8986a526f22c2e83d1921384662923
+SHA1: 0e8df03459e7d87868cc24b85f0739f77b4224a0
+SHA256: 5a50549948bc4363eab32b1083dad2165402c3628f2ee85e9a32563228cc61c1
+Section: libs
+Priority: optional
+Multi-Arch: same
+Homepage: https://gitlab.freedesktop.org/glvnd/libglvnd
+Description: Vendor neutral GL dispatch library -- GLX development files
+ This is an implementation of the vendor-neutral dispatch layer for
+ arbitrating OpenGL API calls between multiple vendors on a per-screen basis.
+ .
+ This package provides the development environment for compiling programs
+ against the GLX library.
+
+Package: libglx0
+Source: libglvnd
+Version: 1.3.2-1
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 159
+Depends: libc6 (>= 2.14), libglvnd0 (= 1.3.2-1), libx11-6 (>= 2:1.4.99.1), libglx-mesa0
+Filename: ./libglx0_1.3.2-1_amd64.deb
+Size: 34312
+MD5sum: e7a5943f0a693075e8eeb9aa1735fc43
+SHA1: 36d0345404431f1d249d6ccaaf7e713974527a15
+SHA256: 3d7a3d46d770973683b8b69c838ab6441b629ce5540001a3bd0b699642ce974d
+Section: libs
+Priority: optional
+Multi-Arch: same
+Homepage: https://gitlab.freedesktop.org/glvnd/libglvnd
+Description: Vendor neutral GL dispatch library -- GLX support
+ This is an implementation of the vendor-neutral dispatch layer for
+ arbitrating OpenGL API calls between multiple vendors on a per-screen basis.
+ .
+ This package contains support for GLX.
+
+Package: libglx0-dbgsym
+Source: libglvnd
+Version: 1.3.2-1
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 309
+Depends: libglx0 (= 1.3.2-1)
+Filename: ./libglx0-dbgsym_1.3.2-1_amd64.deb
+Size: 118780
+MD5sum: ca339abb66a4a56ff77c61223e9edb0e
+SHA1: 3f02289a7fe2715afa1ef9024c83b0088375b721
+SHA256: 4327f52cfc22d3b6b6a7404a02f02d645f6b262cec95e7253642a8e208a237ca
+Section: debug
+Priority: optional
+Multi-Arch: same
+Description: debug symbols for libglx0
+Build-Ids: 726c75a41a94d66e718021806e695e19150f500f
+
+Package: libopengl-dev
+Source: libglvnd
+Version: 1.3.2-1
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 22
+Depends: libopengl0 (= 1.3.2-1)
+Breaks: libglvnd-dev (<< 1.3.0-1)
+Replaces: libglvnd-dev (<< 1.3.0-1)
+Filename: ./libopengl-dev_1.3.2-1_amd64.deb
+Size: 5876
+MD5sum: 3a388bd61be6e73aa6f3402659072995
+SHA1: 0c20f944371b69916d2e9e6850f5329d18abfe26
+SHA256: 7e598e73830ffb5d6fae58ebd1c769b6f7806dc92bd5649893b74f1302b47e82
+Section: libs
+Priority: optional
+Multi-Arch: same
+Homepage: https://gitlab.freedesktop.org/glvnd/libglvnd
+Description: Vendor neutral GL dispatch library -- OpenGL development files
+ This is an implementation of the vendor-neutral dispatch layer for
+ arbitrating OpenGL API calls between multiple vendors on a per-screen basis.
+ .
+ This package provides the development environment for compiling programs
+ against the OpenGL library.
+
+Package: libopengl0
+Source: libglvnd
+Version: 1.3.2-1
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 220
+Depends: libc6 (>= 2.14), libglvnd0 (= 1.3.2-1)
+Filename: ./libopengl0_1.3.2-1_amd64.deb
+Size: 31880
+MD5sum: 118ea2a251e61f0c0da2fe4789d43a66
+SHA1: add9d3b4ff1a79c22cc71e59e4ef03d293254211
+SHA256: e47b75bc9e553a3fb7f5f0421145734739b63c022b32be617f7cd5caf529f8cb
+Section: libs
+Priority: optional
+Multi-Arch: same
+Homepage: https://gitlab.freedesktop.org/glvnd/libglvnd
+Description: Vendor neutral GL dispatch library -- OpenGL support
+ This is an implementation of the vendor-neutral dispatch layer for
+ arbitrating OpenGL API calls between multiple vendors on a per-screen basis.
+ .
+ This package contains support for OpenGL.
+
+Package: libopengl0-dbgsym
+Source: libglvnd
+Version: 1.3.2-1
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 68
+Depends: libopengl0 (= 1.3.2-1)
+Filename: ./libopengl0-dbgsym_1.3.2-1_amd64.deb
+Size: 18872
+MD5sum: 57e3949373b6a473a50a4271b1a07356
+SHA1: e0f2ee6f66b01297693d10e1bf02caedb7cdf1fd
+SHA256: b34b2aee9c34ba55fff206ab3faa621000701bbb4b5f6f35b6e3e1e460685eae
+Section: debug
+Priority: optional
+Multi-Arch: same
+Description: debug symbols for libopengl0
+Build-Ids: 3b7bbe213331ff0ac5fb81bdfcf4077b38397fb5
+
