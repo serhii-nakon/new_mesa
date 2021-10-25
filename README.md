@@ -1,6 +1,9 @@
-To use this Mesa:
+To build Mesa:
 1) You need clone this repository - "git clone https://github.com/serhii-nakon/new_mesa.git";
-2) Copy folder "amdgpu-mesa" to "/opt/" - "sudo cp -r new_mesa/amdgpu-mesa /opt";
-3) Copy from folder "/opt/amdgpu-mesa/" this two files "mesa32.list" and "mesa64.list" to "/etc/apt/sources.list.d/" - "sudo cp /opt/amdgpu-mesa/*.list /etc/apt/sources.list.d";
-4) Run "sudo apt update";
-5) Run "sudo apt full-upgrade"
+2) Configure LXC to be able run it in unprivileged mode
+3) Run lxcup.sh
+4) It will create folder named mesa with mesa packages
+
+To install from release:
+1) Download archive
+2) Run install.sh (this version of mesa only for debian 11)
