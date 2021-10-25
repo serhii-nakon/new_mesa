@@ -7,3 +7,6 @@ To build Mesa:
 To install from release:
 1) Download archive
 2) Run install.sh (this version of mesa only for debian 11)
+
+If you use two amd cards with xorg maybe you will need run it to be able use both
+echo 'xrandr --setprovideroutputsource 1 0' | sudo tee /etc/X11/Xsession.d/10custom_initialise_xrandr
