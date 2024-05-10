@@ -44,3 +44,10 @@ PS: Please remove mesa-vdpau because it will crash applications that use it (lik
 To uninstall:
 1) Remove environment variables from /etc/environment
 2) Remove Mesa from /opt/ - `rm -rf /opt/mesa32 /opt/mesa64`
+
+To fix flatpak packages (it can crash startup):
+1) `sudo flatpak override --unset-env=LD_LIBRARY_PATH`
+2) `sudo flatpak override --unset-env=LIBGL_DRIVERS_PATH`
+3) `sudo flatpak override --unset-env=VK_LAYER_PATH`
+4) `sudo flatpak override --unset-env=VK_ICD_FILENAMES`
+5) `sudo flatpak override --unset-env=LIBVA_DRIVERS_PATH`
