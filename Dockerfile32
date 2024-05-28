@@ -36,7 +36,7 @@ RUN sudo chmod -Rv o+rw,g+rw /opt/mesa32
 
 # Clone Mesa and libdrm
 RUN git clone --depth=1 --branch=libdrm-2.4.120 --single-branch https://gitlab.freedesktop.org/mesa/drm.git
-RUN git clone --depth=1 --branch=mesa-24.0.6 --single-branch https://gitlab.freedesktop.org/mesa/mesa.git
+RUN git clone --depth=1 --branch=mesa-24.1.0 --single-branch https://gitlab.freedesktop.org/mesa/mesa.git
 
 # Build and install libdrm
 WORKDIR /home/jenkins/drm
@@ -85,7 +85,7 @@ RUN ninja -C builddir/ install
 # Copy libLLVM to able use i=on host without additional installing
 WORKDIR /opt/mesa32/lib/i386-linux-gnu
 RUN cp -v /usr/lib/llvm-18/lib/libLLVM.so.1 libLLVM.so.1
-RUN ln -s libLLVM.so.1 libLLVM-18.1.4.so
+RUN ln -s libLLVM.so.1 libLLVM-18.1.6.so
 RUN ln -s libLLVM.so.1 libLLVM.so
 RUN ln -s libLLVM.so.1 libLLVM.so.18.1
 RUN ln -s libLLVM.so.1 libLLVM-18.so
