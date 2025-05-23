@@ -32,6 +32,8 @@ LIBVA_DRIVERS_PATH="/opt/mesa64/lib/x86_64-linux-gnu/dri:/opt/mesa32/lib/i386-li
 #VK_INSTANCE_LAYERS=VK_LAYER_MESA_overlay
 ```
 
+PS: Sometimes need to clean shader caches - `rm -rfv  ~/.cache/radv_builtin_shaders* ~/.cache/mesa_shader_cache* ~/.local/share/Steam/steamapps/shadercache/*`
+
 To check:</br>
 
 PS: Please remove mesa-vdpau because it will crash applications that use it (like VLC) - it can happen due this Mesa build use newer LLVM but by some reason mesa-vdpau package from Debian repository also try use this newer LLVM and crash due it should try to use older one
