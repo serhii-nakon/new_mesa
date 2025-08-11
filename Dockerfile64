@@ -1,11 +1,11 @@
-FROM --platform=linux/amd64 debian:bookworm
+FROM --platform=linux/amd64 debian:trixie
 
 # Install needle dependencies
 RUN apt update
 RUN apt full-upgrade -y
-RUN apt -y install apt-utils lsb-release gnupg2 sudo git python3 python3-setuptools python3-distutils python3-mako python3-pip wget \
+RUN apt -y install apt-utils lsb-release gnupg2 sudo git python3 python3-setuptools python3-mako python3-pip wget \
     mesa-utils vulkan-tools gcc g++ pkg-config ninja-build gettext valgrind bison flex dpkg-dev glslang-tools \
-    libc6-dev libomxil-bellagio-dev xutils-dev libvdpau-dev libvulkan-dev libxv-dev libva-dev zlib1g-dev \
+    libc6-dev xutils-dev libvdpau-dev libvulkan-dev libxv-dev libva-dev zlib1g-dev \
     libzstd-dev libexpat1-dev libelf-dev libglvnd-dev libunwind-dev wayland-protocols libwayland-dev \
     libwayland-egl-backend-dev libx11-dev libxext-dev libxfixes-dev libxcb-glx0-dev libxcb-shm0-dev \
     libxcb1-dev libx11-xcb-dev libxcb-dri2-0-dev libxcb-dri3-dev libxcb-present-dev libxcb-sync-dev \
@@ -14,8 +14,8 @@ RUN apt -y install apt-utils lsb-release gnupg2 sudo git python3 python3-setupto
     wayland-protocols libwayland-bin directx-headers-dev
 
 # Install LLVM related packages
-RUN wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add -
-RUN echo 'deb http://apt.llvm.org/bookworm/ llvm-toolchain-bookworm-20 main' | tee /etc/apt/sources.list.d/llvm.list
+RUN wget -qO- https://apt.llvm.org/llvm-snapshot.gpg.key | sudo tee /etc/apt/trusted.gpg.d/apt.llvm.org.asc
+RUN echo 'deb http://apt.llvm.org/trixie/ llvm-toolchain-trixie-20 main' | tee /etc/apt/sources.list.d/llvm.list
 RUN apt update
 RUN apt install -y libllvm20 llvm-20-dev libclang-20-dev libclang-cpp20-dev
 
@@ -36,8 +36,8 @@ RUN sudo mkdir /opt/mesa64
 RUN sudo chmod -Rv o+rw,g+rw /opt/mesa64
 
 # Clone Mesa and libdrm
-RUN git clone --depth=1 --branch=libdrm-2.4.124 --single-branch https://gitlab.freedesktop.org/mesa/drm.git
-RUN git clone --depth=1 --branch=mesa-25.1.0 --single-branch https://gitlab.freedesktop.org/mesa/mesa.git
+RUN git clone --depth=1 --branch=libdrm-2.4.125 --single-branch https://gitlab.freedesktop.org/mesa/drm.git
+RUN git clone --depth=1 --branch=mesa-25.2.0 --single-branch https://gitlab.freedesktop.org/mesa/mesa.git
 
 # Build and install libdrm
 WORKDIR /home/jenkins/drm
