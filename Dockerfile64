@@ -15,9 +15,9 @@ RUN apt -y install apt-utils lsb-release gnupg2 sudo git python3 python3-setupto
 
 # Install LLVM related packages
 RUN wget -qO- https://apt.llvm.org/llvm-snapshot.gpg.key | sudo tee /etc/apt/trusted.gpg.d/apt.llvm.org.asc
-RUN echo 'deb http://apt.llvm.org/trixie/ llvm-toolchain-trixie-20 main' | tee /etc/apt/sources.list.d/llvm.list
+RUN echo 'deb http://apt.llvm.org/trixie/ llvm-toolchain-trixie-21 main' | tee /etc/apt/sources.list.d/llvm.list
 RUN apt update
-RUN apt install -y libllvm20 llvm-20-dev libclang-20-dev libclang-cpp20-dev
+RUN apt install -y libllvm21 llvm-21-dev libclang-21-dev libclang-cpp21-dev
 
 # Create regular user
 RUN useradd -m jenkins
@@ -36,8 +36,8 @@ RUN sudo mkdir /opt/mesa64
 RUN sudo chmod -Rv o+rw,g+rw /opt/mesa64
 
 # Clone Mesa and libdrm
-RUN git clone --depth=1 --branch=libdrm-2.4.125 --single-branch https://gitlab.freedesktop.org/mesa/drm.git
-RUN git clone --depth=1 --branch=mesa-25.2.0 --single-branch https://gitlab.freedesktop.org/mesa/mesa.git
+RUN git clone --depth=1 --branch=libdrm-2.4.129 --single-branch https://gitlab.freedesktop.org/mesa/drm.git
+RUN git clone --depth=1 --branch=mesa-25.3.1 --single-branch https://gitlab.freedesktop.org/mesa/mesa.git
 
 # Build and install libdrm
 WORKDIR /home/jenkins/drm
@@ -68,7 +68,6 @@ RUN meson setup builddir/ \
     -Dllvm=enabled \
     -Dlmsensors=enabled \
     -Dtools=glsl,nir \
-    -Dgallium-vdpau=enabled \
     -Dgallium-va=enabled \
     -Dglvnd=enabled \
     -Dgbm=enabled \
@@ -82,12 +81,12 @@ RUN ninja -C builddir/ install
 
 # Copy libLLVM to able use it on host without additional installing
 WORKDIR /opt/mesa64/lib/x86_64-linux-gnu
-RUN cp -v /usr/lib/llvm-20/lib/libLLVM.so.1 libLLVM.so.1
+RUN cp -v /usr/lib/llvm-21/lib/libLLVM.so.1 libLLVM.so.1
 RUN ln -s libLLVM.so.1 libLLVM.so
-RUN ln -s libLLVM.so.1 libLLVM.so.20.0
-RUN ln -s libLLVM.so.1 libLLVM.so.20.1
-RUN ln -s libLLVM.so.1 libLLVM-20.so.1
-RUN ln -s libLLVM.so.1 libLLVM-20.so
+RUN ln -s libLLVM.so.1 libLLVM.so.21.0
+RUN ln -s libLLVM.so.1 libLLVM.so.21.1
+RUN ln -s libLLVM.so.1 libLLVM-21.so.1
+RUN ln -s libLLVM.so.1 libLLVM-21.so
 WORKDIR /home/jenkins
 
 RUN mkdir /home/jenkins/out
