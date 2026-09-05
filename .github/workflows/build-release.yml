@@ -11,17 +11,23 @@ on:
         description: "LibDRM version"
         required: true
         default: "2.4.134"
+  push:
+    branches:
+      - master
+    paths:
+      - "Dockerfile32"
+      - "Dockerfile64"
+      - "docker-compose.yaml"
+      - ".github/workflows/build-release.yml"
 
 jobs:
   build:
-    name: Build Mesa ${{ inputs.mesa_version }}
+    name: Build Mesa
     runs-on: ubuntu-latest
     timeout-minutes: 360
     permissions:
       contents: write
     env:
-      MESA_VERSION: ${{ inputs.mesa_version }}
-      LIBDRM_VERSION: ${{ inputs.libdrm_version }}
       GH_TOKEN: ${{ github.token }}
     steps:
       - name: Checkout
@@ -45,16 +51,14 @@ jobs:
       - name: Publish release
         run: |
           set -euo pipefail
-          # Release title is the subject of the commit we are building
-          TITLE="$(git log -1 --pretty=%s "${GITHUB_SHA}")"
-          NOTES="Mesa ${MESA_VERSION}, LibDRM ${LIBDRM_VERSION}"
+          TITLE="Mesa ${MESA_VERSION}, LibDRM ${LIBDRM_VERSION}"
 
           if gh release view "${MESA_VERSION}" >/dev/null 2>&1; then
-            gh release edit "${MESA_VERSION}" --title "${TITLE}" --notes "${NOTES}"
+            gh release edit "${MESA_VERSION}" --title "${TITLE}"
             gh release upload "${MESA_VERSION}" mesa.tar.xz --clobber
           else
             gh release create "${MESA_VERSION}" mesa.tar.xz \
               --target "${GITHUB_SHA}" \
               --title "${TITLE}" \
-              --notes "${NOTES}"
+              --notes ""
           fi
