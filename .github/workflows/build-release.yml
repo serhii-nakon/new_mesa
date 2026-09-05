@@ -22,12 +22,14 @@ on:
 
 jobs:
   build:
-    name: Build Mesa
+    name: Build Mesa ${{ inputs.mesa_version }}
     runs-on: ubuntu-latest
     timeout-minutes: 360
     permissions:
       contents: write
     env:
+      MESA_VERSION: ${{ inputs.mesa_version }}
+      LIBDRM_VERSION: ${{ inputs.libdrm_version }}
       GH_TOKEN: ${{ github.token }}
     steps:
       - name: Checkout
