@@ -10,11 +10,10 @@ services:
       args:
         - MESA_VERSION
         - LIBDRM_VERSION
+        - HOST_UID
         - PLATFORM=linux/386
         - BITS=32
         - TRIPLET=i386-linux-gnu
-    # uid:gid that writes into the bind mount, defaults to jenkins from the image
-    user: "${OUT_UID:-1000}:${OUT_GID:-1000}"
     privileged: true
     volumes:
       - "./:/home/jenkins/out"
@@ -26,10 +25,10 @@ services:
       args:
         - MESA_VERSION
         - LIBDRM_VERSION
+        - HOST_UID
         - PLATFORM=linux/amd64
         - BITS=64
         - TRIPLET=x86_64-linux-gnu
-    user: "${OUT_UID:-1000}:${OUT_GID:-1000}"
     privileged: true
     volumes:
       - "./:/home/jenkins/out"

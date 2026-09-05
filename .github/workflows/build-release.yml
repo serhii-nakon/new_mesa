@@ -39,9 +39,9 @@ jobs:
       - name: Build mesa32 and mesa64
         run: |
           set -euo pipefail
-          # Containers copy the result into the bind mounted workspace, so run
-          # them as the runner user instead of the image default (uid 1000)
-          export OUT_UID="$(id -u)" OUT_GID="$(id -g)"
+          # Containers copy the result into the bind mounted workspace, so the
+          # user inside them is created with the uid of the runner user
+          export HOST_UID="$(id -u)"
           docker compose up --build
           ls -l mesa32 mesa64
 

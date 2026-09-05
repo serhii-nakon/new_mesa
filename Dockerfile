@@ -16,8 +16,10 @@ RUN apt -y install apt-utils lsb-release gnupg2 sudo git python3 python3-setupto
     libxrandr-dev libxcb-sync-dev libsensors-dev libx11-dev libudev-dev libpciaccess-dev libcairo-dev \
     wayland-protocols libwayland-bin directx-headers-dev
 
-# Create regular user
-RUN useradd -m jenkins
+# Create regular user, its uid must match the host user that owns the
+# mounted /home/jenkins/out, otherwise result cannot be copied out
+ARG HOST_UID=1000
+RUN useradd -m -u ${HOST_UID} jenkins
 RUN echo 'jenkins ALL=(ALL) NOPASSWD:ALL' | tee /etc/sudoers.d/nopassword
 
 USER jenkins
