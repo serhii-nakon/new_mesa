@@ -4,6 +4,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile32
+      # Taken from the environment ("MESA_VERSION=26.2.2 docker compose build").
+      # When not set, defaults declared in the Dockerfile are used.
+      args:
+        - MESA_VERSION
+        - LIBDRM_VERSION
     privileged: true
     volumes:
       - "./:/home/jenkins/out"
@@ -12,6 +17,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile64
+      args:
+        - MESA_VERSION
+        - LIBDRM_VERSION
     privileged: true
     volumes:
       - "./:/home/jenkins/out"

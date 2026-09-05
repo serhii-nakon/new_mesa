@@ -1,0 +1,60 @@
+name: Build Mesa and publish release
+
+on:
+  workflow_dispatch:
+    inputs:
+      mesa_version:
+        description: "Mesa version (release tag is taken from it)"
+        required: true
+        default: "26.2.2"
+      libdrm_version:
+        description: "LibDRM version"
+        required: true
+        default: "2.4.134"
+
+jobs:
+  build:
+    name: Build Mesa ${{ inputs.mesa_version }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    permissions:
+      contents: write
+    env:
+      MESA_VERSION: ${{ inputs.mesa_version }}
+      LIBDRM_VERSION: ${{ inputs.libdrm_version }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build mesa32 and mesa64
+        run: |
+          set -euo pipefail
+          # Containers run as uid 1000 (jenkins) and copy the result into the
+          # bind mounted workspace, which belongs to another uid on the runner
+          chmod 777 "${GITHUB_WORKSPACE}"
+          docker compose up --build
+          ls -l mesa32 mesa64
+
+      - name: Archive into mesa.tar.xz
+        run: |
+          set -euo pipefail
+          XZ_OPT="-9 -T0" tar -cJf mesa.tar.xz mesa32 mesa64
+          ls -lh mesa.tar.xz
+
+      - name: Publish release
+        run: |
+          set -euo pipefail
+          # Release title is the subject of the commit we are building
+          TITLE="$(git log -1 --pretty=%s "${GITHUB_SHA}")"
+          NOTES="Mesa ${MESA_VERSION}, LibDRM ${LIBDRM_VERSION}"
+
+          if gh release view "${MESA_VERSION}" >/dev/null 2>&1; then
+            gh release edit "${MESA_VERSION}" --title "${TITLE}" --notes "${NOTES}"
+            gh release upload "${MESA_VERSION}" mesa.tar.xz --clobber
+          else
+            gh release create "${MESA_VERSION}" mesa.tar.xz \
+              --target "${GITHUB_SHA}" \
+              --title "${TITLE}" \
+              --notes "${NOTES}"
+          fi
