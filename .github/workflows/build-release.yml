@@ -22,14 +22,15 @@ on:
 
 jobs:
   build:
-    name: Build Mesa ${{ inputs.mesa_version }}
+    name: Build Mesa
     runs-on: ubuntu-latest
-    timeout-minutes: 360
+    timeout-minutes: 90
     permissions:
       contents: write
     env:
-      MESA_VERSION: ${{ inputs.mesa_version }}
-      LIBDRM_VERSION: ${{ inputs.libdrm_version }}
+      # Inputs are empty on push, so defaults are duplicated here - keep in sync
+      MESA_VERSION: ${{ inputs.mesa_version || '26.2.2' }}
+      LIBDRM_VERSION: ${{ inputs.libdrm_version || '2.4.134' }}
       GH_TOKEN: ${{ github.token }}
     steps:
       - name: Checkout
