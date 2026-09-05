@@ -1,4 +1,7 @@
-FROM --platform=linux/386 debian:trixie
+# Target platform - "linux/amd64" for 64 bit, "linux/386" for 32 bit build
+# (global ARG, so it must be declared again after FROM to be used below)
+ARG PLATFORM=linux/amd64
+FROM --platform=${PLATFORM} debian:trixie
 
 # Install needle dependencies
 RUN apt update
@@ -25,9 +28,14 @@ RUN pip3 install --break-system-packages meson pyyaml
 ENV PATH /home/jenkins/.local/bin:${PATH}
 RUN meson --version
 
+# Bitness and multiarch triplet of the build - "32" and "i386-linux-gnu" for 32 bit
+ARG BITS=64
+ARG TRIPLET=x86_64-linux-gnu
+ENV PREFIX=/opt/mesa${BITS}
+
 # Create dirictory to install binaries
-RUN sudo mkdir /opt/mesa32
-RUN sudo chmod -Rv o+rw,g+rw /opt/mesa32
+RUN sudo mkdir ${PREFIX}
+RUN sudo chmod -Rv o+rw,g+rw ${PREFIX}
 
 # Versions to build (can be overridden - "docker compose build --build-arg MESA_VERSION=26.2.2")
 ARG MESA_VERSION=26.2.2
@@ -40,19 +48,19 @@ RUN git clone --depth=1 --branch=mesa-${MESA_VERSION} --single-branch https://gi
 # Build and install libdrm
 WORKDIR /home/jenkins/drm
 RUN meson setup builddir/ \
-    --prefix=/opt/mesa32 \
+    --prefix=${PREFIX} \
     --buildtype=release \
     -Db_ndebug=true \
     -Dvalgrind=enabled
 RUN ninja -C builddir/
 RUN ninja -C builddir/ install
 
-ENV PKG_CONFIG_PATH=/opt/mesa32/lib/i386-linux-gnu/pkgconfig
+ENV PKG_CONFIG_PATH=${PREFIX}/lib/${TRIPLET}/pkgconfig
 
 # Build and install Mesa
 WORKDIR /home/jenkins/mesa
 RUN meson setup builddir/ \
-    --prefix=/opt/mesa32 \
+    --prefix=${PREFIX} \
     -Dplatforms=x11,wayland \
     -Dgallium-extra-hud=true \
     -Dvulkan-drivers=amd \
@@ -88,7 +96,7 @@ RUN mkdir /home/jenkins/out
 # RUN sudo usermod -a -G render jenkins
 # RUN sudo usermod -a -G sasl jenkins
 
-# Copy to host
-# ENTRYPOINT [ "tail", "-f", "/dev/null" ]
-ENTRYPOINT [ "cp", "-vr", "/opt/mesa32", "/home/jenkins/out" ]
-# ENTRYPOINT [ "ls", "-al", "/opt/mesa32/lib" ]
+# Copy to host (shell form, exec form does not expand ${PREFIX})
+# ENTRYPOINT tail -f /dev/null
+ENTRYPOINT cp -vr ${PREFIX} /home/jenkins/out
+# ENTRYPOINT ls -al ${PREFIX}/lib

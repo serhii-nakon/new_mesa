@@ -39,9 +39,9 @@ jobs:
       - name: Build mesa32 and mesa64
         run: |
           set -euo pipefail
-          # Containers run as uid 1000 (jenkins) and copy the result into the
-          # bind mounted workspace, which belongs to another uid on the runner
-          chmod 777 "${GITHUB_WORKSPACE}"
+          # Containers copy the result into the bind mounted workspace, so run
+          # them as the runner user instead of the image default (uid 1000)
+          export OUT_UID="$(id -u)" OUT_GID="$(id -g)"
           docker compose up --build
           ls -l mesa32 mesa64
 

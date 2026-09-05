@@ -3,12 +3,18 @@ services:
   build32:
     build:
       context: .
-      dockerfile: Dockerfile32
-      # Taken from the environment ("MESA_VERSION=26.2.2 docker compose build").
-      # When not set, defaults declared in the Dockerfile are used.
+      dockerfile: Dockerfile
+      # MESA_VERSION and LIBDRM_VERSION are taken from the environment
+      # ("MESA_VERSION=26.2.2 docker compose build"), when not set defaults
+      # declared in the Dockerfile are used
       args:
         - MESA_VERSION
         - LIBDRM_VERSION
+        - PLATFORM=linux/386
+        - BITS=32
+        - TRIPLET=i386-linux-gnu
+    # uid:gid that writes into the bind mount, defaults to jenkins from the image
+    user: "${OUT_UID:-1000}:${OUT_GID:-1000}"
     privileged: true
     volumes:
       - "./:/home/jenkins/out"
@@ -16,10 +22,14 @@ services:
   build64:
     build:
       context: .
-      dockerfile: Dockerfile64
+      dockerfile: Dockerfile
       args:
         - MESA_VERSION
         - LIBDRM_VERSION
+        - PLATFORM=linux/amd64
+        - BITS=64
+        - TRIPLET=x86_64-linux-gnu
+    user: "${OUT_UID:-1000}:${OUT_GID:-1000}"
     privileged: true
     volumes:
       - "./:/home/jenkins/out"
