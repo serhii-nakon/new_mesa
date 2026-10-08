@@ -6,7 +6,7 @@ on:
       mesa_version:
         description: "Mesa version (release tag is taken from it)"
         required: true
-        default: "26.2.2"
+        default: "26.2.4"
       libdrm_version:
         description: "LibDRM version"
         required: true
@@ -29,7 +29,7 @@ jobs:
       contents: write
     env:
       # Inputs are empty on push, so defaults are duplicated here - keep in sync
-      MESA_VERSION: ${{ inputs.mesa_version || '26.2.2' }}
+      MESA_VERSION: ${{ inputs.mesa_version || '26.2.4' }}
       LIBDRM_VERSION: ${{ inputs.libdrm_version || '2.4.134' }}
       GH_TOKEN: ${{ github.token }}
     steps:

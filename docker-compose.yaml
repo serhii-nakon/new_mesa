@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile
       # MESA_VERSION and LIBDRM_VERSION are taken from the environment
-      # ("MESA_VERSION=26.2.2 docker compose build"), when not set defaults
+      # ("MESA_VERSION=26.2.4 docker compose build"), when not set defaults
       # declared in the Dockerfile are used
       args:
         - MESA_VERSION

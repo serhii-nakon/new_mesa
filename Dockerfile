@@ -39,8 +39,8 @@ ENV PREFIX=/opt/mesa${BITS}
 RUN sudo mkdir ${PREFIX}
 RUN sudo chmod -Rv o+rw,g+rw ${PREFIX}
 
-# Versions to build (can be overridden - "docker compose build --build-arg MESA_VERSION=26.2.2")
-ARG MESA_VERSION=26.2.2
+# Versions to build (can be overridden - "docker compose build --build-arg MESA_VERSION=26.2.4")
+ARG MESA_VERSION=26.2.4
 ARG LIBDRM_VERSION=2.4.134
 
 # Clone Mesa and libdrm
